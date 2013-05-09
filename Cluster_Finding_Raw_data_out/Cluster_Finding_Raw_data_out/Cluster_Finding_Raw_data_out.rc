@@ -48,8 +48,8 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
     "LANGUAGE 4, 2\r\n"
     "#pragma code_page(936)\r\n"
-    "#include ""res\\Cluster_Finding_Raw_data_out.rc2""  // ·? Microsoft Visual C++ ±à?-μ?×ê?′\r\n"
-    "#include ""afxres.rc""     // ±ê×?×é?t\r\n"
+    "#include ""res\\Cluster_Finding_Raw_data_out.rc2""  // ??è? Microsoft Visual C++ ?¨¤?§?è?-|¨???¨￠?§o???\r\n"
+    "#include ""afxres.rc""     // ?¨¤?§o?¨￠??¨￠?§|?t\r\n"
     "#endif\r\n"
     "\0"
 END
@@ -86,8 +86,11 @@ BEGIN
     CONTROL         "保留真实信息",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,35,155,64,10
     CTEXT           "选择入射电荷量",IDC_STATIC,24,79,120,8
     COMBOBOX        IDC_COMBO3,219,75,48,69,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    EDITTEXT        IDC_EDIT1,36,124,126,14,ES_AUTOHSCROLL
-    CTEXT           "文件名称",IDC_STATIC,178,127,84,8
+    EDITTEXT        IDC_EDIT1,33,102,126,14,ES_AUTOHSCROLL
+    CTEXT           "文件名称",IDC_STATIC,180,104,84,8
+    EDITTEXT        IDC_EDIT2,33,127,126,14,ES_AUTOHSCROLL
+    CTEXT           "循环次数",IDC_STATIC,180,129,84,8
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,179,306,14
 END
 
 
@@ -169,13 +172,15 @@ BEGIN
     IDC_COMBO1, 0x403, 2, 0
 0x0036, 
     IDC_COMBO2, 0x403, 2, 0
-0x0030, 
-    IDC_COMBO2, 0x403, 2, 0
 0x0031, 
     IDC_COMBO2, 0x403, 2, 0
 0x0032, 
     IDC_COMBO2, 0x403, 2, 0
 0x0033, 
+    IDC_COMBO2, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO2, 0x403, 4, 0
+0x3031, 0x0030, 
     IDC_COMBO2, 0x403, 8, 0
 0x6f70, 0x7369, 0x6f73, 0x006e, 
     IDC_COMBO3, 0x403, 2, 0
@@ -211,8 +216,8 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE 4, 2
 #pragma code_page(936)
-#include "res\Cluster_Finding_Raw_data_out.rc2"  // 非 Microsoft Visual C++ 编辑的资源
-#include "afxres.rc"     // 标准组件
+#include "res\Cluster_Finding_Raw_data_out.rc2"  // ·? Microsoft Visual C++ ±à?-μ?×ê?′
+#include "afxres.rc"     // ±ê×?×é?t
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
