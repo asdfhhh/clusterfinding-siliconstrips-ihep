@@ -202,6 +202,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\RandomUser.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Signal.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -221,6 +229,10 @@
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\WriteFileUser.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -236,7 +248,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Constant.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Incident_vector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RandomUser.h"
 				>
 			</File>
 			<File
@@ -244,7 +264,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Signal.h"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WriteFileUser.h"
 				>
 			</File>
 		</Filter>

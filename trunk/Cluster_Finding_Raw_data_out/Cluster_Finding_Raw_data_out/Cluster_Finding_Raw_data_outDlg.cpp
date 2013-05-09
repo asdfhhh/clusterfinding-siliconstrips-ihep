@@ -20,10 +20,11 @@ CCluster_Finding_Raw_data_outDlg::CCluster_Finding_Raw_data_outDlg(CWnd* pParent
 {
 	//给出各选项的初始化值
 	StrFileName="data.txt";
+	loop_str="10";
 	m_layer=5;
-	m_charge=4;
+	m_charge=5;
 	m_hit=5;
-
+	truth_flag=false;
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -31,9 +32,12 @@ void CCluster_Finding_Raw_data_outDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	DDX_Text(pDX, IDC_EDIT1,StrFileName);
+	DDX_Text(pDX, IDC_EDIT2,loop_str);
 	DDX_CBIndex(pDX, IDC_COMBO1, m_layer);
-	DDX_CBIndex(pDX, IDC_COMBO2, m_charge);
-	DDX_CBIndex(pDX, IDC_COMBO3, m_hit);
+	DDX_CBIndex(pDX, IDC_COMBO2,  m_hit);
+	DDX_CBIndex(pDX, IDC_COMBO3,m_charge);
+    DDX_Control(pDX, IDC_PROGRESS1, m_Progress);
+
 }
 
 BEGIN_MESSAGE_MAP(CCluster_Finding_Raw_data_outDlg, CDialog)
@@ -41,6 +45,8 @@ BEGIN_MESSAGE_MAP(CCluster_Finding_Raw_data_outDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
 	ON_BN_CLICKED(IDOK, &CCluster_Finding_Raw_data_outDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_CHECK1, &CCluster_Finding_Raw_data_outDlg::OnBnClickedCheck1)
+	ON_NOTIFY(NM_CUSTOMDRAW, IDC_PROGRESS1, &CCluster_Finding_Raw_data_outDlg::OnNMCustomdrawProgress1)
 END_MESSAGE_MAP()
 
 
@@ -100,11 +106,114 @@ HCURSOR CCluster_Finding_Raw_data_outDlg::OnQueryDragIcon()
 void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 {
 	UpdateData();
+	fileout.OpenDataFile(StrFileName);
+	if(truth_flag)fileout.OpenTruthFile(StrFileName);
+	p_x=0;
+	p_y=0;
+	p_z=0;
 	// TODO: Add your control notification handler code here
 	//初始化入射粒子
-	v_incident.GetPosition(&p_x,&p_y);
-	v_incident.GetDirection(&v_x,&v_y,&v_z);
-	f_out.Open(StrFileName,CFile::modeCreate|CFile::modeReadWrite,NULL);
-	f_out.Close();
+
+	loop=_tstoi(loop_str);
+	m_Progress.SetPos(0);
+	m_Progress.SetRange(0,loop);
+	m_Progress.SetStep(1);
+
+	switch(m_charge)
+	{
+	case 0:
+		particle_charge=1;
+		break;
+	case 1:
+		particle_charge=2;
+		break;
+	case 2:
+		particle_charge=3;
+		break;
+	case 3:
+		particle_charge=25;
+		break;
+	case 4:
+		particle_charge=26;
+		break;
+	case 5:
+		particle_charge=0;
+		break;
+	default:
+		break;
+	}
+	switch(m_hit)
+	{
+	case 0:
+		particle_num=1;
+		break;
+	case 1:
+		particle_num=2;
+		break;
+	case 2:
+		particle_num=3;
+		break;
+	case 3:
+		particle_num=10;
+		break;
+	case 4:
+		particle_num=100;
+		break;
+	case 5:
+		particle_num=0;
+		break;
+	default:
+		break;
+	}
+	for(int i=0;i<loop;i++)
+	{
+		if(!particle_num)particle_num=rnd.Poisson(1);
+		for(int ii=0;ii<particle_num;ii++)
+		{
+			v_incident.GetPosition(&p_x,&p_y);
+			v_incident.GetDirection(&v_x,&v_y,&v_z);
+			if(!particle_charge)particle_charge=rnd.CosmicRandom();
+			if(truth_flag)fileout.AddTruth(particle_charge,p_x,p_y,v_x,v_y,v_z);
+			sig.SetCharge(particle_charge);
+			while(Det_Check(p_x,p_y,p_z))
+			{
+				sig.SetStart(p_x,p_y);
+				Track(DET_THICKNESS);
+				sig.SetEnd(p_x,p_y);
+				int chhhh=sizeof(data_energy);
+				sig.SignalGen(data_energy);
+				fileout.AddData(data_energy);
+				Track(DET_DIS);
+			}
+		}
+		m_Progress.StepIt();
+		Sleep(1);
+	}
+	fileout.CloseDataFile();
+	if(truth_flag)fileout.CloseTruth();
+}
+void CCluster_Finding_Raw_data_outDlg::Track(int z)
+{
+	p_x=z*v_x/v_z+p_x;//有可能造成数据误差 double转int
+	p_y=z*v_y/v_z+p_y;
+	p_z+=z;
+}
+int CCluster_Finding_Raw_data_outDlg::Det_Check(int x, int y, int z)
+{
+	if((x<MAX_X)&&(y<MAX_Y)&&(z<((m_layer+1)*DET_THICKNESS+m_layer*DET_DIS)))return 1;
+	else return 0;
 }
 
+void CCluster_Finding_Raw_data_outDlg::OnBnClickedCheck1()
+{
+	// TODO: Add your control notification handler code here
+	if(truth_flag)truth_flag=false;
+	else truth_flag=true;
+}
+
+void CCluster_Finding_Raw_data_outDlg::OnNMCustomdrawProgress1(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
