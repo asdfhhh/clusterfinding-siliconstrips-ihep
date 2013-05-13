@@ -36,7 +36,7 @@ void CCluster_Finding_Raw_data_outDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_CBIndex(pDX, IDC_COMBO1, m_layer);
 	DDX_CBIndex(pDX, IDC_COMBO2,  m_hit);
 	DDX_CBIndex(pDX, IDC_COMBO3,m_charge);
-    DDX_Control(pDX, IDC_PROGRESS1, m_Progress);
+	DDX_Control(pDX, IDC_PROGRESS1, m_Progress);
 
 }
 
@@ -171,15 +171,20 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 		for(int ii=0;ii<particle_num;ii++)
 		{
 			v_incident.GetPosition(&p_x,&p_y);
+			p_z=0;
 			v_incident.GetDirection(&v_x,&v_y,&v_z);
 			if(!particle_charge)particle_charge=rnd.CosmicRandom();
 			if(truth_flag)fileout.AddTruth(particle_charge,p_x,p_y,v_x,v_y,v_z);
 			sig.SetCharge(particle_charge);
-			while(Det_Check(p_x,p_y,p_z))
+			for(int iii=0;iii<m_layer;iii++)
 			{
-				sig.SetStart(p_x,p_y);
-				Track(DET_THICKNESS);
-				sig.SetEnd(p_x,p_y);
+				if(Det_Check(p_x,p_y,p_z))
+				{
+					sig.SetStart(p_x,p_y);
+					Track(DET_THICKNESS);
+					sig.SetEnd(p_x,p_y);
+				}
+				else sig.AddNoise(data_energy);
 				int chhhh=sizeof(data_energy);
 				sig.SignalGen(data_energy);
 				fileout.AddData(data_energy);
