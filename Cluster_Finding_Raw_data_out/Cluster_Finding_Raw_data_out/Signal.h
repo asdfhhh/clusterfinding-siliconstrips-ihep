@@ -16,4 +16,5 @@ public:
 	void SetEnd(int x, int y);
 	double LenthCompute(int x_s, int x_e);
 	int SetCharge(int charge);
+	int AddNoise(double* signal);
 };

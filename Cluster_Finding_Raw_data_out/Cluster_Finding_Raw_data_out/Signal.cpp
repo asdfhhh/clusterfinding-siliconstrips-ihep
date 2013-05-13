@@ -12,12 +12,7 @@ Signal::~Signal(void)
 
 int Signal::SignalGen(double* signal)
 {	//initial the data
-	
-	//add noise
-	for (int j= 0; j<STRIP_NUM ;j++)
-	{
-		signal[j]=rnd.Normal(0,NOISE);
-	}	
+	AddNoise(signal);
 
 	int ladder_width=MAX_X;
 	int start=0;
@@ -66,5 +61,15 @@ double Signal::LenthCompute(int x_s, int x_e)
 int Signal::SetCharge(int charge)
 {
 	weighting=charge;
+	return 0;
+}
+
+int Signal::AddNoise(double* signal)
+{
+	//add noise
+	for (int j= 0; j<STRIP_NUM ;j++)
+	{
+		signal[j]=rnd.Normal(0,NOISE);
+	}	
 	return 0;
 }
