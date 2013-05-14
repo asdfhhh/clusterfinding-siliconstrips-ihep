@@ -27,39 +27,11 @@
 	pad2->Draw();
 	pad3->Draw();
 	pad4->Draw();
-	//Draw X-Y plot
+	//Draw TH2F plot
 	pad1->cd();
 	TH2F*monitor=new TH2F("monitor","online monitor",3072,0,3072,6,0,6);
 	pad1->Modified();
 	pad1->Update();
-
-
-	//Draw X-Z plot
-	TBox*d11= new TBox(0,0,m_x,-DET_THICKNESS/1000);
-	d11->SetFillColor(9);
-	TBox*d21= new TBox(0,-((DET_THICKNESS+DET_DIS)/1000),m_x,-((DET_THICKNESS+DET_DIS)/1000)-DET_THICKNESS/1000);
-	d21->SetFillColor(9);
-	TBox*d31= new TBox(0,-((DET_THICKNESS+DET_DIS)*2/1000),m_x,-((DET_THICKNESS+DET_DIS)*2/1000)-DET_THICKNESS/1000);
-	d31->SetFillColor(9);
-	TBox*d41= new TBox(0,-((DET_THICKNESS+DET_DIS)*3/1000),m_x,-((DET_THICKNESS+DET_DIS)*3/1000)-DET_THICKNESS/1000);
-	d41->SetFillColor(9);
-	TBox*d51= new TBox(0,-((DET_THICKNESS+DET_DIS)*4/1000),m_x,-((DET_THICKNESS+DET_DIS)*4/1000)-DET_THICKNESS/1000);
-	d51->SetFillColor(9);
-	TBox*d61= new TBox(0,-((DET_THICKNESS+DET_DIS)*5/1000),m_x,-((DET_THICKNESS+DET_DIS)*5/1000)-DET_THICKNESS/1000);
-	d61->SetFillColor(9);
-	TText*t2= new TText(0,0,"Y-Z" );
-	t2->SetTextColor(12);
-
-	pad3->cd();
-	d11->Draw();
-	d21->Draw();
-	d31->Draw();
-	d41->Draw();
-	d51->Draw();
-	d61->Draw();
-	t2->Draw();
-	pad3->Modified();
-	pad3->Update();
 
 	//Draw Y-Z plot
 	TBox*d12= new TBox(0,0,m_y,-DET_THICKNESS/1000);
@@ -74,7 +46,7 @@
 	d52->SetFillColor(9);
 	TBox*d62= new TBox(0,-((DET_THICKNESS+DET_DIS)*5/1000),m_y,-((DET_THICKNESS+DET_DIS)*5/1000)-DET_THICKNESS/1000);
 	d62->SetFillColor(9);
-	TText*t3= new TText(0,0,"X-Z" );
+	TText*t3= new TText(0,0,"Y-Z" );
 	t3->SetTextColor(12);
 
 	pad2->cd();
@@ -87,6 +59,34 @@
 	t3->Draw();
 	pad2->Modified();
 	pad2->Update();
+
+	//Draw X-Z plot
+	TBox*d11= new TBox(0,0,m_x,-DET_THICKNESS/1000);
+	d11->SetFillColor(9);
+	TBox*d21= new TBox(0,-((DET_THICKNESS+DET_DIS)/1000),m_x,-((DET_THICKNESS+DET_DIS)/1000)-DET_THICKNESS/1000);
+	d21->SetFillColor(9);
+	TBox*d31= new TBox(0,-((DET_THICKNESS+DET_DIS)*2/1000),m_x,-((DET_THICKNESS+DET_DIS)*2/1000)-DET_THICKNESS/1000);
+	d31->SetFillColor(9);
+	TBox*d41= new TBox(0,-((DET_THICKNESS+DET_DIS)*3/1000),m_x,-((DET_THICKNESS+DET_DIS)*3/1000)-DET_THICKNESS/1000);
+	d41->SetFillColor(9);
+	TBox*d51= new TBox(0,-((DET_THICKNESS+DET_DIS)*4/1000),m_x,-((DET_THICKNESS+DET_DIS)*4/1000)-DET_THICKNESS/1000);
+	d51->SetFillColor(9);
+	TBox*d61= new TBox(0,-((DET_THICKNESS+DET_DIS)*5/1000),m_x,-((DET_THICKNESS+DET_DIS)*5/1000)-DET_THICKNESS/1000);
+	d61->SetFillColor(9);
+	TText*t2= new TText(0,0,"X-Z" );
+	t2->SetTextColor(12);
+
+	pad3->cd();
+	d11->Draw();
+	d21->Draw();
+	d31->Draw();
+	d41->Draw();
+	d51->Draw();
+	d61->Draw();
+	t2->Draw();
+	pad3->Modified();
+	pad3->Update();
+
 	//Draw 3D
 	pad4->cd();
 
@@ -160,15 +160,6 @@
 		z1=m_z;
 		plotline->SetLineWidth(charge);
 
-		//Draw X-Y line
-		pad1->cd();
-		plotline->SetX1(x0);
-		plotline->SetY1(y0);
-		plotline->SetX2(x1);
-		plotline->SetY2(y1);
-		plotline->Draw();
-		pad1->Modified();
-		pad1->Update();
 		//Draw Y-Z line
 		pad2->cd();
 		plotline->SetX1(y0);

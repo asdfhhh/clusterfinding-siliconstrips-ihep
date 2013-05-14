@@ -176,7 +176,7 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 			if(!particle_charge)particle_charge=rnd.CosmicRandom();
 			if(truth_flag)fileout.AddTruth(particle_charge,p_x,p_y,v_x,v_y,v_z);
 			sig.SetCharge(particle_charge);
-			for(int iii=0;iii<m_layer;iii++)
+			for(int iii=0;iii<(m_layer+1);iii++)
 			{
 				if(Det_Check(p_x,p_y,p_z))
 				{
