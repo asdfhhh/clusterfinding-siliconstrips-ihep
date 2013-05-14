@@ -63,43 +63,33 @@
 	ifstream fin("truth_data.txt");
 	getline(fin,title);
 
-	//TEveArrow* a; 
 
-TEveTrackList *list = new TEveTrackList();
+	TEveTrackList *list = new TEveTrackList();
 
-   TEveRecTrackD *rc = new TEveRecTrackD();
-   TEveTrackPropagator* prop = g_prop = list->GetPropagator();
-         prop->SetMagField(0.);
-gEve->AddElement(list);
-	while(fin.good())
+	TEveRecTrackD *rc = new TEveRecTrackD();
+	TEveTrackPropagator* prop = g_prop = list->GetPropagator();
+	prop->SetMagField(0.);
+	gEve->AddElement(list);
+TEveTrack* track=0;
+while(fin.good())
 	{
 		fin>>charge>>x>>y>>z>>v_x>>v_y>>v_z;
 		x0=x/1000;
 		y0=y/1000;
 		z0=z/1000;
-		/*a= new TEveArrow(v_x*100,v_y*100, v_z*100, x/1000, y/1000, z/1000);
-		a->SetMainColor(kRed);
-		a->SetTubeR(0.001*charge);
-		a->SetPickable(kTRUE);
-		gEve->AddElement(a);*/
-rc->fP.Set(v_x, v_y,v_z);
-  rc->fV.Set(x0,y0,z0);
-  rc->fSign = charge;
-TEveTrack* track = new TEveTrack(rc,prop);
-  track->SetName(Form("Charge %d", charge));
-
- 
-  list->AddElement(track);
-
+		rc->fP.Set(v_x, v_y,v_z);
+		rc->fV.Set(x0,y0,z0);
+		rc->fSign = charge;
+		 track= new TEveTrack(rc,prop);
+		track->SetName(Form("%d", count));
+		list->AddElement(track);
+		count++;
 	}        
 
-list->SetLineColor(kRed);  
-
-
-list->MakeTracks();
+	list->SetLineColor(kRed);  
+	list->MakeTracks();
 	TEveViewer *ev = gEve->GetDefaultViewer();
-   TGLViewer  *gv = ev->GetGLViewer();
-   gv->SetGuideState(TGLUtil::kAxesOrigin, kTRUE, kFALSE, 0);
-	//gEve->FullRedraw3D(kTRUE);
-gEve->Redraw3D(kTRUE);
+	TGLViewer  *gv = ev->GetGLViewer();
+	gv->SetGuideState(TGLUtil::kAxesOrigin, kTRUE, kFALSE, 0);
+	gEve->Redraw3D(kTRUE);
 }
