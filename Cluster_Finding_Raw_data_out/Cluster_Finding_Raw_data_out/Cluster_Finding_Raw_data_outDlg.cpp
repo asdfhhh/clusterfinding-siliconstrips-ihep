@@ -25,6 +25,8 @@ CCluster_Finding_Raw_data_outDlg::CCluster_Finding_Raw_data_outDlg(CWnd* pParent
 	m_charge=5;
 	m_hit=5;
 	truth_flag=false;
+	particle_charge_flag=true;
+	particle_num_flag=true;
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -123,21 +125,27 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 	{
 	case 0:
 		particle_charge=1;
+		particle_charge_flag=true;
 		break;
 	case 1:
 		particle_charge=2;
+		particle_charge_flag=true;
 		break;
 	case 2:
 		particle_charge=3;
+		particle_charge_flag=true;
 		break;
 	case 3:
 		particle_charge=25;
+		particle_charge_flag=true;
 		break;
 	case 4:
 		particle_charge=26;
+		particle_charge_flag=true;
 		break;
 	case 5:
 		particle_charge=0;
+		particle_charge_flag=false;
 		break;
 	default:
 		break;
@@ -146,35 +154,41 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 	{
 	case 0:
 		particle_num=1;
+		particle_num_flag=true;
 		break;
 	case 1:
 		particle_num=2;
+		particle_num_flag=true;
 		break;
 	case 2:
 		particle_num=3;
+		particle_num_flag=true;
 		break;
 	case 3:
 		particle_num=10;
+		particle_num_flag=true;
 		break;
 	case 4:
 		particle_num=100;
+		particle_num_flag=true;
 		break;
 	case 5:
 		particle_num=0;
+		particle_num_flag=false;
 		break;
 	default:
 		break;
 	}
 	for(int i=0;i<loop;i++)
 	{
-		if(!particle_num)particle_num=rnd.Poisson(1);
+		if(!particle_num_flag)particle_num=rnd.Poisson(1);
 		for(int ii=0;ii<particle_num;ii++)
 		{
 			v_incident.GetPosition(&p_x,&p_y);
 			p_z=0;
 			v_incident.GetDirection(&v_x,&v_y,&v_z);
-			if(!particle_charge)particle_charge=rnd.CosmicRandom();
-			if(truth_flag)fileout.AddTruth(particle_charge,p_x,p_y,v_x,v_y,v_z);
+			if(!particle_charge_flag)particle_charge=rnd.CosmicRandom();
+			if(truth_flag)fileout.AddTruth(i,particle_charge,p_x,p_y,v_x,v_y,v_z);
 			sig.SetCharge(particle_charge);
 			for(int iii=0;iii<(m_layer+1);iii++)
 			{
@@ -192,8 +206,9 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 			}
 		}
 		m_Progress.StepIt();
-		Sleep(1);
+		Sleep(0.1);
 	}
+	m_Progress.SetPos(0);
 	fileout.CloseDataFile();
 	if(truth_flag)fileout.CloseTruth();
 }
