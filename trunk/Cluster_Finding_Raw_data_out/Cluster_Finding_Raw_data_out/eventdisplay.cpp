@@ -7,6 +7,7 @@
 	int charge;
 	int x,y,z;
 	int count=0;
+	int trigger=0;
 	double v_x,v_y,v_z;
 	double box_p[3];
 	double x0,y0,z0,x1,y1,z1;
@@ -70,17 +71,17 @@
 	TEveTrackPropagator* prop = g_prop = list->GetPropagator();
 	prop->SetMagField(0.);
 	gEve->AddElement(list);
-TEveTrack* track=0;
-while(fin.good())
+	TEveTrack* track=0;
+	while(fin.good())
 	{
-		fin>>charge>>x>>y>>z>>v_x>>v_y>>v_z;
+		fin>>trigger>>charge>>x>>y>>z>>v_x>>v_y>>v_z;
 		x0=x/1000;
 		y0=y/1000;
 		z0=z/1000;
 		rc->fP.Set(v_x, v_y,v_z);
 		rc->fV.Set(x0,y0,z0);
 		rc->fSign = charge;
-		 track= new TEveTrack(rc,prop);
+		track= new TEveTrack(rc,prop);
 		track->SetName(Form("%d", count));
 		list->AddElement(track);
 		count++;

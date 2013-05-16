@@ -32,7 +32,7 @@ int WriteFileUser::OpenTruthFile(CString name)
 	truth_out.open(pBuf);
 	if(truth_out.is_open())
 	{
-		truth_out<<"Charge\tX\tY\tZ\tV-X\tV-Y\tV-Z\n";
+		truth_out<<"Trigger\tCharge\tX\tY\tZ\tV-X\t\tV-Y\t\tV-Z\n";
 		return 1;
 	}
 	return 0;
@@ -51,9 +51,9 @@ int WriteFileUser::AddData(double* data)
 	return 0;
 }
 
-int WriteFileUser::AddTruth(int charge,unsigned int x,unsigned int y,double vx, double vy,double vz)
+int WriteFileUser::AddTruth(int num,int charge,unsigned int x,unsigned int y,double vx, double vy,double vz)
 {
-	truth_out<<charge<<"\t"<<x<<"\t"<<y<<"\t"<<0<<"\t"<<vx<<"\t"<<vy<<"\t"<<vz<<endl;
+	truth_out<<num<<"\t"<<charge<<"\t"<<x<<"\t"<<y<<"\t"<<0<<"\t"<<vx<<"\t\t"<<vy<<"\t\t"<<vz<<endl;
 	return 0;
 }
 

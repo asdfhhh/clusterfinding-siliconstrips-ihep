@@ -10,7 +10,7 @@ public:
 	int OpenDataFile(CString name);
 	int OpenTruthFile(CString name);
 	int AddData(double* data);
-	int AddTruth(int charge,unsigned int x,unsigned int y,double vx, double vy,double vz);
+	int AddTruth(int num,int charge,unsigned int x,unsigned int y,double vx, double vy,double vz);
 	int CloseDataFile(void);
 	int CloseTruth(void);
 	ofstream data_out;

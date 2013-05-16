@@ -25,6 +25,8 @@ public:
 	double v_z;
 	int particle_charge;//入射粒子电荷
 	int particle_num;//入射粒子数量
+	bool particle_charge_flag;//入射粒子电荷
+	bool particle_num_flag;//入射粒子数量
 	int loop;//循环次数
 	double data_energy[STRIP_NUM];
 	double data_out[DATA_NUM];

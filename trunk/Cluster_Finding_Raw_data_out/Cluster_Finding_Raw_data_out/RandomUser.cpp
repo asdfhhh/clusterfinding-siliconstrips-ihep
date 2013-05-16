@@ -104,10 +104,12 @@ double RandomUser::Erlang(int scale, double shape) //Special technique required.
 int RandomUser::CosmicRandom()
 {	
 	double cosmic[28]={540,26,0.4,0.4,0.4,2.2,2.2,2.2,0.3,0.3,0.22,0.22,0.19,0.19,0.03,0.03,0.01,0.01,0.02,0.02,0.05,0.05,0.05,0.05,0.05,0.12,0.12,0.12};
-	double uni=57595;
-	int num=rand()%57595;
+	double uni=0;
+	int num=rand()%576;//will induce the error
 	for(int i=0;i<28;i++)
 	{
-		if(num<(cosmic[i]*100))return i+1;
+		uni+=cosmic[i];
+		if(num<uni)return i+1;
+		else continue;
 	}
 }
