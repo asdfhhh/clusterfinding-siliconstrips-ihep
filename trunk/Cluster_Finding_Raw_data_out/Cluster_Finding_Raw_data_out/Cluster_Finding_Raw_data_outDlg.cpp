@@ -113,6 +113,7 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 	p_x=0;
 	p_y=0;
 	p_z=0;
+	double data_energy[6][STRIP_NUM];
 	// TODO: Add your control notification handler code here
 	//初始化入射粒子
 
@@ -182,28 +183,32 @@ void CCluster_Finding_Raw_data_outDlg::OnBnClickedOk()
 	for(int i=0;i<loop;i++)
 	{
 		if(!particle_num_flag)particle_num=rnd.Poisson(1);
+		for(int ii=0;ii<(m_layer+1);ii++)
+		{
+			sig.AddNoise(data_energy[ii]);
+		}
 		for(int ii=0;ii<particle_num;ii++)
 		{
+			int iii=0;
 			v_incident.GetPosition(&p_x,&p_y);
 			p_z=0;
 			v_incident.GetDirection(&v_x,&v_y,&v_z);
 			if(!particle_charge_flag)particle_charge=rnd.CosmicRandom();
 			if(truth_flag)fileout.AddTruth(i,particle_charge,p_x,p_y,v_x,v_y,v_z);
 			sig.SetCharge(particle_charge);
-			for(int iii=0;iii<(m_layer+1);iii++)
+			while(Det_Check(p_x,p_y,p_z))
 			{
-				if(Det_Check(p_x,p_y,p_z))
-				{
-					sig.SetStart(p_x,p_y);
-					Track(DET_THICKNESS);
-					sig.SetEnd(p_x,p_y);
-				}
-				else sig.AddNoise(data_energy);
-				int chhhh=sizeof(data_energy);
-				sig.SignalGen(data_energy);
-				fileout.AddData(data_energy);
+				sig.SetStart(p_x,p_y);
+				Track(DET_THICKNESS);
+				sig.SetEnd(p_x,p_y);
+				sig.SignalGen(data_energy[iii]);
 				Track(DET_DIS);
+				iii++;
 			}
+		}
+		for(int ii=0;ii<(m_layer+1);ii++)
+		{
+			fileout.AddData(data_energy[ii]);
 		}
 		m_Progress.StepIt();
 		Sleep(0.1);

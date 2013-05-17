@@ -6,6 +6,7 @@
 	string title;
 	int charge;
 	int x,y,z;
+	int trigger=0;
 	int count=0;
 	double v_x,v_y,v_z;
 	double box_p[3];
@@ -130,10 +131,6 @@
 	gGeoManager->SetVisLevel(4);
 	top->Draw("ogle");
 
-	TLine *plotline;
-	plotline= new TLine(0,0,1,1);
-	plotline->SetLineColor(46);
-	plotline->SetLineStyle(4);
 	ifstream din("data.txt");
 	for(int i=0;i<6;i++)
 	{
@@ -149,33 +146,42 @@
 	ifstream fin("truth_data.txt");
 	getline(fin,title);
 
-	//while(fin.good())
+	while(fin.good())
 	{
-		fin>>charge>>x>>y>>z>>v_x>>v_y>>v_z;
+		TLine *plotlineY= new TLine(0,0,1,1);
+		plotlineY->SetLineColor(46);
+		plotlineY->SetLineStyle(4);
+
+		TLine *plotlineX= new TLine(0,0,1,1);
+		plotlineX->SetLineColor(46);
+		plotlineX->SetLineStyle(4);
+
+		fin>>trigger>>charge>>x>>y>>z>>v_x>>v_y>>v_z;
 		x0=x/1000;
 		y0=y/1000;
 		z0=z/1000;
 		x1=-v_x*m_z/v_z+x0;
 		y1=-v_y*m_z/v_z+y0;
 		z1=m_z;
-		plotline->SetLineWidth(charge);
+		plotlineY->SetLineWidth(charge);
+		plotlineX->SetLineWidth(charge);
 
 		//Draw Y-Z line
 		pad2->cd();
-		plotline->SetX1(y0);
-		plotline->SetY1(z0);
-		plotline->SetX2(y1);
-		plotline->SetY2(z1);
-		plotline->Draw();
+		plotlineY->SetX1(y0);
+		plotlineY->SetY1(z0);
+		plotlineY->SetX2(y1);
+		plotlineY->SetY2(z1);
+		plotlineY->Draw();
 		pad2->Modified();
 		pad2->Update();
 		//Draw X-Z line
 		pad3->cd();
-		plotline->SetX1(x0);
-		plotline->SetY1(z0);
-		plotline->SetX2(x1);
-		plotline->SetY2(z1);
-		plotline->Draw();
+		plotlineX->SetX1(x0);
+		plotlineX->SetY1(z0);
+		plotlineX->SetX2(x1);
+		plotlineX->SetY2(z1);
+		plotlineX->Draw();
 		pad3->Modified();
 		pad3->Update();
 		//Draw 3D
