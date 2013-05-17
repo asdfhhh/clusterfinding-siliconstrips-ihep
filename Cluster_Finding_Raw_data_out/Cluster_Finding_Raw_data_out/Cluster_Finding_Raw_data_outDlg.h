@@ -28,8 +28,6 @@ public:
 	bool particle_charge_flag;//入射粒子电荷
 	bool particle_num_flag;//入射粒子数量
 	int loop;//循环次数
-	double data_energy[STRIP_NUM];
-	double data_out[DATA_NUM];
 
 	CString loop_str;
 	Incident_vector v_incident;

@@ -12,8 +12,6 @@ Signal::~Signal(void)
 
 int Signal::SignalGen(double* signal)
 {	//initial the data
-	AddNoise(signal);
-
 	int ladder_width=MAX_X;
 	int start=0;
 	int end=0;

@@ -41,10 +41,10 @@ int WriteFileUser::OpenTruthFile(CString name)
 int WriteFileUser::AddData(double* data)
 {
 	int ch_num=STRIP_NUM;/*sizeof(data)/sizeof(double);*/
-	int tmp_data=0;
+	unsigned int tmp_data=0;
 	for(int i=0;i<ch_num;i++)
 	{
-		if(data[i]>0)tmp_data=int(data[i]);
+		if(data[i]>0)tmp_data=unsigned int(data[i]);
 		else tmp_data=0;
 		data_out<<tmp_data<<endl;
 	}
