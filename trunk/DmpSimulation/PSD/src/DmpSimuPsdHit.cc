@@ -1,0 +1,57 @@
+// Description: This class hinerits from  G4VHit. It is used to
+// store the MC hit information of the PSD 
+//
+// Author(s):
+//  - creation by X.Wu, 12/07/2013
+
+#include "DmpSimuPsdHit.hh"
+
+G4Allocator<DmpSimuPsdHit> DmpSimuPsdHitAllocator;
+
+DmpSimuPsdHit::DmpSimuPsdHit()
+{
+  Edep = 0.; 
+  StripNumber = 0; 
+  pos = G4ThreeVector(0.,0.,0.);
+}
+
+DmpSimuPsdHit::~DmpSimuPsdHit()
+{;}
+
+DmpSimuPsdHit::DmpSimuPsdHit(const DmpSimuPsdHit& right)
+  : G4VHit()
+{
+  Edep = right.Edep; 
+  StripNumber = right.StripNumber;
+  pos = right.pos;
+}
+
+const DmpSimuPsdHit& DmpSimuPsdHit::operator=(const DmpSimuPsdHit& right)
+{
+  Edep = right.Edep; 
+  StripNumber = right.StripNumber;
+  pos = right.pos;
+  return *this;
+}
+
+int DmpSimuPsdHit::operator==(const DmpSimuPsdHit& right) const
+{
+   return((Edep==right.Edep)&&(StripNumber==right.StripNumber)&&(pos==right.pos));
+}
+
+void DmpSimuPsdHit::Draw()
+{;}
+
+void DmpSimuPsdHit::Print()
+{;}
+
+
+
+
+
+
+
+
+
+
+
