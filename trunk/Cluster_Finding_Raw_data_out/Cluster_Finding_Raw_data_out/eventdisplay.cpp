@@ -6,7 +6,7 @@
 	string title;
 	int charge;
 	int x,y,z;
-	int count=0;
+	int count=-1;
 	int trigger=0;
 	double v_x,v_y,v_z;
 	double box_p[3];
@@ -65,12 +65,8 @@
 	getline(fin,title);
 
 
-	TEveTrackList *list = new TEveTrackList();
-
+	TEveTrackList *list=0;
 	TEveRecTrackD *rc = new TEveRecTrackD();
-	TEveTrackPropagator* prop = g_prop = list->GetPropagator();
-	prop->SetMagField(0.);
-	gEve->AddElement(list);
 	TEveTrack* track=0;
 	while(fin.good())
 	{
@@ -81,14 +77,34 @@
 		rc->fP.Set(v_x, v_y,v_z);
 		rc->fV.Set(x0,y0,z0);
 		rc->fSign = charge;
-		track= new TEveTrack(rc,prop);
-		track->SetName(Form("%d", count));
-		list->AddElement(track);
-		count++;
-	}        
-
+		if(trigger!=count)
+		{
+			if(list)
+			{
+				list->SetLineColor(kRed);  
+				list->MakeTracks();
+			}
+			count=trigger;
+			list= new TEveTrackList();
+			TEveTrackPropagator* prop = g_prop = list->GetPropagator();
+			prop->SetMagField(0.);
+			list->SetName(Form("trigger %d", trigger));
+			track= new TEveTrack(rc,prop);
+			track->SetName(Form("charge %d", charge));
+			list->AddElement(track);
+			gEve->AddElement(list);
+		}
+		else 
+		{
+			track= new TEveTrack(rc,prop);
+			track->SetName(Form("charge %d", charge));
+			list->AddElement(track);
+			continue;
+		}
+	} 
 	list->SetLineColor(kRed);  
 	list->MakeTracks();
+
 	TEveViewer *ev = gEve->GetDefaultViewer();
 	TGLViewer  *gv = ev->GetGLViewer();
 	gv->SetGuideState(TGLUtil::kAxesOrigin, kTRUE, kFALSE, 0);
