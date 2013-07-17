@@ -1,0 +1,21 @@
+1 the GEANT4 setup
+To setup the environment, execute the following commands:
+
+. /afs/cern.ch/sw/lcg/external/gcc/4.3.2/x86_64-slc5/setup.sh
+cd /afs/cern.ch/sw/lcg/app/releases/ROOT/5.30.00/x86_64-slc5-gcc43-opt/root;. ./bin/thisroot.sh; cd -
+export G4WORKDIR= (director of your G4 installation)/Geant4/9.5.p01/x86_64-slc5-gcc43
+source /afs/cern.ch/sw/lcg/external/geant4/9.5.p01/x86_64-slc5-gcc43/setup.sh
+
+To run, cd to the test directory, and do :
+
+$G4WORKDIR/bin/$G4SYSTEM/DmpSimu macro_proton.mac
+
+2 the Compilation
+to run a scons compilation you can follow the list step by step:
+1) open the 'Execution/SConstruct', change the line 8
+"env.PrependENVPath('PATH', '/home/rui/work/geant4/build')"
+							~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~to your local setting.
+2) in the directory 'Execution' type command 'scons' and enter. the compilation 
+process will finish in several mins.
+3) then you can find the executable "DmpSimu" in this folder.
+4) to make clean type 'scons -c'
