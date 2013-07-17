@@ -1,0 +1,40 @@
+import os
+env = Environment(ENV = os.environ)
+
+#set the programme name
+ExeName='DmpSimu'
+
+#set your G4 build folder(where you type 'cmake')
+env.PrependENVPath('PATH', '/home/rui/work/geant4/build')
+
+#set the G4 environments
+env.Prepend(CPPFLAGS = '-DG4VIS_USE')
+env.Append(CPPFLAGS = ' -DG4UI_USE')
+env.Append(CPPFLAGS = ' -DG4VIS_USE_OPENGLX')
+
+#set ROOT binary folder
+rootsys=os.environ['ROOTSYS']
+env.PrependENVPath('PATH', rootsys+'/bin')
+
+env.ParseConfig("geant4-config --cflags --libs")
+env.ParseConfig("root-config --cflags --libs")
+env.Prepend(CPPPATH=['../DmpSimulation/include','../PsdSimulation/include','../StkSimulation/include','../BgoSimulation/include','../NudSimulation/include','../TriggerSimulation/include','../SimuNtupleMaker/include','../RawDataSimulation/include'])
+
+#sub_detector build
+glb_obj=env.Object(Glob("../DmpSimulation/src/*.cc"))
+psd_obj=env.Object(Glob("../PsdSimulation/src/*.cc"))
+stk_obj=env.Object(Glob("../StkSimulation/src/*.cc"))
+bgo_obj=env.Object(Glob("../BgoSimulation/src/*.cc"))
+nud_obj=env.Object(Glob("../NudSimulation/src/*.cc"))
+trg_obj=env.Object(Glob("../TriggerSimulation/src/*.cc"))
+ntp_obj=env.Object(Glob("../SimuNtupleMaker/src/*.cc"))
+raw_obj=env.Object(Glob("../RawDataSimulation/src/*.cc"))
+
+#main build
+obj = stk_obj + bgo_obj + psd_obj + glb_obj + nud_obj + trg_obj + ntp_obj + raw_obj + env.Object(Glob(ExeName+".cc"))  
+env.Program(ExeName,list(obj))
+
+#clean up
+#for item in list(obj):
+#	Delete(item)
+
