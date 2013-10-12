@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <isotope N="12" Z="6" name="C120x91d7ee0">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C130x91d7f20">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="Carbon0x91d7df8">
+      <fraction n="0.9893" ref="C120x91d7ee0"/>
+      <fraction n="0.0107" ref="C130x91d7f20"/>
+    </element>
+    <isotope N="1" Z="1" name="H10x91d7f60">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H20x91d7fa0">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Hydrogen0x91d7cc8">
+      <fraction n="0.999885" ref="H10x91d7f60"/>
+      <fraction n="0.000115" ref="H20x91d7fa0"/>
+    </element>
+    <material name="Scintillator0x91d8080" state="solid">
+      <MEE unit="eV" value="64.6844741120545"/>
+      <D unit="g/cm3" value="1.032"/>
+      <fraction n="0.914544377696929" ref="Carbon0x91d7df8"/>
+      <fraction n="0.0854556223030713" ref="Hydrogen0x91d7cc8"/>
+    </material>
+    <isotope N="1" Z="1" name="10x9199168">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="20x9198de8">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Galactic0x9199278">
+      <fraction n="0.999885" ref="10x9199168"/>
+      <fraction n="0.000115" ref="20x9198de8"/>
+    </element>
+    <material name="Galactic0x91991d0" state="gas">
+      <T unit="K" value="2.73"/>
+      <P unit="pascal" value="3e-18"/>
+      <MEE unit="eV" value="19.2"/>
+      <D unit="g/cm3" value="1e-25"/>
+      <fraction n="1" ref="Galactic0x9199278"/>
+    </material>
+    <isotope N="28" Z="14" name="Si280x91a6c00">
+      <atom unit="g/mole" value="27.9769"/>
+    </isotope>
+    <isotope N="29" Z="14" name="Si290x919a658">
+      <atom unit="g/mole" value="28.9765"/>
+    </isotope>
+    <isotope N="30" Z="14" name="Si300x91a6f68">
+      <atom unit="g/mole" value="29.9738"/>
+    </isotope>
+    <element name="Silicon0x91a6c90">
+      <fraction n="0.922296077703922" ref="Si280x91a6c00"/>
+      <fraction n="0.0468319531680468" ref="Si290x919a658"/>
+      <fraction n="0.0308719691280309" ref="Si300x91a6f68"/>
+    </element>
+    <material name="Silicon0x91a7448" state="solid">
+      <MEE unit="eV" value="173"/>
+      <D unit="g/cm3" value="2.333"/>
+      <fraction n="1" ref="Silicon0x91a6c90"/>
+    </material>
+    <isotope N="1" Z="1" name="10x91a7a50">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="20x91a7a90">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Galactic0x91a7dc8">
+      <fraction n="0.999885" ref="10x91a7a50"/>
+      <fraction n="0.000115" ref="20x91a7a90"/>
+    </element>
+    <material name="Galactic0x91a7d08" state="gas">
+      <T unit="K" value="2.73"/>
+      <P unit="pascal" value="3e-18"/>
+      <MEE unit="eV" value="19.2"/>
+      <D unit="g/cm3" value="1e-25"/>
+      <fraction n="1" ref="Galactic0x91a7dc8"/>
+    </material>
+    <isotope N="180" Z="74" name="1800x91a72f0">
+      <atom unit="g/mole" value="179.947"/>
+    </isotope>
+    <isotope N="182" Z="74" name="1820x91a7330">
+      <atom unit="g/mole" value="181.948"/>
+    </isotope>
+    <isotope N="183" Z="74" name="1830x91a7370">
+      <atom unit="g/mole" value="182.95"/>
+    </isotope>
+    <isotope N="184" Z="74" name="1840x91a73b0">
+      <atom unit="g/mole" value="183.951"/>
+    </isotope>
+    <isotope N="186" Z="74" name="1860x91a7420">
+      <atom unit="g/mole" value="185.954"/>
+    </isotope>
+    <element name="Tungsten0x91a6e98">
+      <fraction n="0.0012" ref="1800x91a72f0"/>
+      <fraction n="0.265" ref="1820x91a7330"/>
+      <fraction n="0.1431" ref="1830x91a7370"/>
+      <fraction n="0.3064" ref="1840x91a73b0"/>
+      <fraction n="0.2843" ref="1860x91a7420"/>
+    </element>
+    <material name="Tungsten0x91a6df0" state="solid">
+      <MEE unit="eV" value="727"/>
+      <D unit="g/cm3" value="19.3"/>
+      <fraction n="1" ref="Tungsten0x91a6e98"/>
+    </material>
+    <isotope N="16" Z="8" name="O160x91d4620">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x91d4660">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x91d46a0">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="O0x91d4408">
+      <fraction n="0.99757" ref="O160x91d4620"/>
+      <fraction n="0.00038" ref="O170x91d4660"/>
+      <fraction n="0.00205" ref="O180x91d46a0"/>
+    </element>
+    <isotope N="70" Z="32" name="Ge700x91a73f0">
+      <atom unit="g/mole" value="69.9243"/>
+    </isotope>
+    <isotope N="72" Z="32" name="Ge720x91d45a0">
+      <atom unit="g/mole" value="71.9221"/>
+    </isotope>
+    <isotope N="73" Z="32" name="Ge730x91d45e0">
+      <atom unit="g/mole" value="72.9235"/>
+    </isotope>
+    <isotope N="74" Z="32" name="Ge740x91d4980">
+      <atom unit="g/mole" value="73.9212"/>
+    </isotope>
+    <isotope N="76" Z="32" name="Ge760x91d49c0">
+      <atom unit="g/mole" value="75.9214"/>
+    </isotope>
+    <element name="Ge0x91d4750">
+      <fraction n="0.2084" ref="Ge700x91a73f0"/>
+      <fraction n="0.2754" ref="Ge720x91d45a0"/>
+      <fraction n="0.0773" ref="Ge730x91d45e0"/>
+      <fraction n="0.3628" ref="Ge740x91d4980"/>
+      <fraction n="0.0761" ref="Ge760x91d49c0"/>
+    </element>
+    <isotope N="209" Z="83" name="Bi2090x91d4928">
+      <atom unit="g/mole" value="208.98"/>
+    </isotope>
+    <element name="Bi0x91d49e8">
+      <fraction n="1" ref="Bi2090x91d4928"/>
+    </element>
+    <material name="G4_BGO0x91d4360" state="solid">
+      <MEE unit="eV" value="534.1"/>
+      <D unit="g/cm3" value="7.13"/>
+      <fraction n="0.154126" ref="O0x91d4408"/>
+      <fraction n="0.17482" ref="Ge0x91d4750"/>
+      <fraction n="0.671054" ref="Bi0x91d49e8"/>
+    </material>
+    <isotope N="1" Z="1" name="10x91d4ee0">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="20x91d4f20">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Galactic0x91d4e40">
+      <fraction n="0.999885" ref="10x91d4ee0"/>
+      <fraction n="0.000115" ref="20x91d4f20"/>
+    </element>
+    <material name="Galactic0x91d4d98" state="gas">
+      <T unit="K" value="2.73"/>
+      <P unit="pascal" value="3e-18"/>
+      <MEE unit="eV" value="19.2"/>
+      <D unit="g/cm3" value="1e-25"/>
+      <fraction n="1" ref="Galactic0x91d4e40"/>
+    </material>
+  </materials>
+
+  <solids>
+    <box lunit="mm" name="PSD0x91d8b20" x="900" y="900" z="20"/>
+    <box lunit="mm" name="PSD0x91a68d8" x="900" y="900" z="20"/>
+    <box lunit="mm" name="ActiveTileY0x91ab0d8" x="92.928" y="92.928" z="0.32"/>
+    <box lunit="mm" name="STKDetectorY0x91a86e8" x="380.24" y="380.24" z="0.32"/>
+    <box lunit="mm" name="ActiveTileX0x91a6718" x="92.928" y="92.928" z="0.32"/>
+    <box lunit="mm" name="STKDetectorX0x91a87e0" x="380.24" y="380.24" z="0.32"/>
+    <box lunit="mm" name="Plane0x91a80f0" x="760.56" y="760.56" z="29.36"/>
+    <box lunit="mm" name="ThickConverter0x91a8970" x="188.08" y="188.08" z="2"/>
+    <box lunit="mm" name="PlaneThickW0x91a8558" x="760.56" y="760.56" z="29.36"/>
+    <box lunit="mm" name="Converter0x91a88b8" x="188.08" y="188.08" z="1"/>
+    <box lunit="mm" name="PlaneThinW0x91a8630" x="760.56" y="760.56" z="29.36"/>
+    <box lunit="mm" name="STK0x91a69b8" x="760.56" y="760.56" z="192"/>
+    <box lunit="mm" name="BGODetectorY0x91d6520" x="25" y="600" z="25"/>
+    <box lunit="mm" name="BGOLayerY0x91d5e68" x="607.5" y="607.5" z="29"/>
+    <box lunit="mm" name="BGODetectorX0x91d5f40" x="600" y="25" z="25"/>
+    <box lunit="mm" name="BGOLayerX0x91d5a28" x="607.5" y="607.5" z="29"/>
+    <box lunit="mm" name="BGO0x91a6ad0" x="607.5" y="607.5" z="410"/>
+    <box lunit="mm" name="Payload0x91a6788" x="900" y="900" z="772.2"/>
+    <box lunit="mm" name="World0x91a5e88" x="1350" y="1350" z="1158.3"/>
+  </solids>
+
+  <structure>
+    <volume name="PSDDetector0x91d8b60">
+      <materialref ref="Scintillator0x91d8080"/>
+      <solidref ref="PSD0x91d8b20"/>
+    </volume>
+    <volume name="PSD0x91a6930">
+      <materialref ref="Galactic0x91991d0"/>
+      <solidref ref="PSD0x91a68d8"/>
+      <physvol name="PSD0x91d8f38">
+        <volumeref ref="PSDDetector0x91d8b60"/>
+      </physvol>
+    </volume>
+    <volume name="ActiveTileY0x91ab1b0">
+      <materialref ref="Silicon0x91a7448"/>
+      <solidref ref="ActiveTileY0x91ab0d8"/>
+    </volume>
+    <volume name="STKDetectorY0x91a8768">
+      <materialref ref="Silicon0x91a7448"/>
+      <solidref ref="STKDetectorY0x91a86e8"/>
+      <physvol name="ActiveTileY0x91ab228">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab228_pos" unit="mm" x="-142.62" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab2d8">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab2d8_pos" unit="mm" x="-142.62" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab388">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab388_pos" unit="mm" x="-142.62" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab450">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab450_pos" unit="mm" x="-142.62" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab500">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab500_pos" unit="mm" x="-47.54" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab600">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab600_pos" unit="mm" x="-47.54" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab6b0">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab6b0_pos" unit="mm" x="-47.54" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab760">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab760_pos" unit="mm" x="-47.54" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab810">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab810_pos" unit="mm" x="47.54" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91ab950">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91ab950_pos" unit="mm" x="47.54" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91aba00">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91aba00_pos" unit="mm" x="47.54" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91abab0">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91abab0_pos" unit="mm" x="47.54" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91abb60">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91abb60_pos" unit="mm" x="142.62" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91abc10">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91abc10_pos" unit="mm" x="142.62" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91abcc0">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91abcc0_pos" unit="mm" x="142.62" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileY0x91abd70">
+        <volumeref ref="ActiveTileY0x91ab1b0"/>
+        <position name="ActiveTileY0x91abd70_pos" unit="mm" x="142.62" y="142.62" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="ActiveTileX0x91ab138">
+      <materialref ref="Silicon0x91a7448"/>
+      <solidref ref="ActiveTileX0x91a6718"/>
+    </volume>
+    <volume name="STKDetectorX0x91a8840">
+      <materialref ref="Silicon0x91a7448"/>
+      <solidref ref="STKDetectorX0x91a87e0"/>
+      <physvol name="ActiveTileX0x91ab280">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab280_pos" unit="mm" x="-142.62" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab330">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab330_pos" unit="mm" x="-47.54" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab3e0">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab3e0_pos" unit="mm" x="47.54" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab4a8">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab4a8_pos" unit="mm" x="142.62" y="-142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab580">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab580_pos" unit="mm" x="-142.62" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab658">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab658_pos" unit="mm" x="-47.54" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab708">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab708_pos" unit="mm" x="47.54" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab7b8">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab7b8_pos" unit="mm" x="142.62" y="-47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab8b0">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab8b0_pos" unit="mm" x="-142.62" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91ab9a8">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91ab9a8_pos" unit="mm" x="-47.54" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91aba58">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91aba58_pos" unit="mm" x="47.54" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91abb08">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91abb08_pos" unit="mm" x="142.62" y="47.54" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91abbb8">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91abbb8_pos" unit="mm" x="-142.62" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91abc68">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91abc68_pos" unit="mm" x="-47.54" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91abd18">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91abd18_pos" unit="mm" x="47.54" y="142.62" z="0"/>
+      </physvol>
+      <physvol name="ActiveTileX0x91abdc8">
+        <volumeref ref="ActiveTileX0x91ab138"/>
+        <position name="ActiveTileX0x91abdc8_pos" unit="mm" x="142.62" y="142.62" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="Plane0x91a84e0">
+      <materialref ref="Galactic0x91a7d08"/>
+      <solidref ref="Plane0x91a80f0"/>
+    </volume>
+    <volume name="ThickConverter0x91a89f0">
+      <materialref ref="Tungsten0x91a6df0"/>
+      <solidref ref="ThickConverter0x91a8970"/>
+    </volume>
+    <volume name="PlaneThickW0x91a85b8">
+      <materialref ref="Galactic0x91a7d08"/>
+      <solidref ref="PlaneThickW0x91a8558"/>
+      <physvol name="ThickConverter0x91a9440">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9440_pos" unit="mm" x="-285.24" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9498">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9498_pos" unit="mm" x="-285.24" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a94f0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a94f0_pos" unit="mm" x="-285.24" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9560">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9560_pos" unit="mm" x="-285.24" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a95b8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a95b8_pos" unit="mm" x="-95.08" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9610">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9610_pos" unit="mm" x="-95.08" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9668">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9668_pos" unit="mm" x="-95.08" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a96c0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a96c0_pos" unit="mm" x="-95.08" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9718">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9718_pos" unit="mm" x="95.08" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a97b8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a97b8_pos" unit="mm" x="95.08" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9810">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9810_pos" unit="mm" x="95.08" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9868">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9868_pos" unit="mm" x="95.08" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a98c0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a98c0_pos" unit="mm" x="285.24" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9918">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9918_pos" unit="mm" x="285.24" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9970">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9970_pos" unit="mm" x="285.24" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a99c8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a99c8_pos" unit="mm" x="285.24" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9dc8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9dc8_pos" unit="mm" x="-285.24" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9e88">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9e88_pos" unit="mm" x="-285.24" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9ec0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9ec0_pos" unit="mm" x="-285.24" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9f18">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9f18_pos" unit="mm" x="-285.24" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9f70">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9f70_pos" unit="mm" x="-95.08" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91a9fc8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91a9fc8_pos" unit="mm" x="-95.08" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa020">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa020_pos" unit="mm" x="-95.08" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa078">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa078_pos" unit="mm" x="-95.08" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa0d0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa0d0_pos" unit="mm" x="95.08" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa128">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa128_pos" unit="mm" x="95.08" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa180">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa180_pos" unit="mm" x="95.08" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa1d8">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa1d8_pos" unit="mm" x="95.08" y="285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa230">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa230_pos" unit="mm" x="285.24" y="-285.24" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa288">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa288_pos" unit="mm" x="285.24" y="-95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa2e0">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa2e0_pos" unit="mm" x="285.24" y="95.08" z="-12.08"/>
+      </physvol>
+      <physvol name="ThickConverter0x91aa338">
+        <volumeref ref="ThickConverter0x91a89f0"/>
+        <position name="ThickConverter0x91aa338_pos" unit="mm" x="285.24" y="285.24" z="-12.08"/>
+      </physvol>
+    </volume>
+    <volume name="Converter0x91a8918">
+      <materialref ref="Tungsten0x91a6df0"/>
+      <solidref ref="Converter0x91a88b8"/>
+    </volume>
+    <volume name="PlaneThinW0x91a8690">
+      <materialref ref="Galactic0x91a7d08"/>
+      <solidref ref="PlaneThinW0x91a8630"/>
+      <physvol name="Converter0x91aa6a8">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa6a8_pos" unit="mm" x="-285.24" y="-285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa700">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa700_pos" unit="mm" x="-285.24" y="-95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa758">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa758_pos" unit="mm" x="-285.24" y="95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa7b0">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa7b0_pos" unit="mm" x="-285.24" y="285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa808">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa808_pos" unit="mm" x="-95.08" y="-285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa860">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa860_pos" unit="mm" x="-95.08" y="-95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa8b8">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa8b8_pos" unit="mm" x="-95.08" y="95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa910">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa910_pos" unit="mm" x="-95.08" y="285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aa968">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aa968_pos" unit="mm" x="95.08" y="-285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aaa08">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aaa08_pos" unit="mm" x="95.08" y="-95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aaa60">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aaa60_pos" unit="mm" x="95.08" y="95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aaab8">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aaab8_pos" unit="mm" x="95.08" y="285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aab10">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aab10_pos" unit="mm" x="285.24" y="-285.24" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aab68">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aab68_pos" unit="mm" x="285.24" y="-95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aabc0">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aabc0_pos" unit="mm" x="285.24" y="95.08" z="-12.58"/>
+      </physvol>
+      <physvol name="Converter0x91aac18">
+        <volumeref ref="Converter0x91a8918"/>
+        <position name="Converter0x91aac18_pos" unit="mm" x="285.24" y="285.24" z="-12.58"/>
+      </physvol>
+    </volume>
+    <volume name="STK0x91a6a10">
+      <materialref ref="Galactic0x91991d0"/>
+      <solidref ref="STK0x91a69b8"/>
+      <physvol name="STKDetectorY0x91a84a8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a84a8_pos" unit="mm" x="-190.16" y="-190.16" z="-95.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8a88">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8a88_pos" unit="mm" x="-190.16" y="-190.16" z="-93.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8ae0">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8ae0_pos" unit="mm" x="-190.16" y="190.16" z="-95.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8b50">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8b50_pos" unit="mm" x="-190.16" y="190.16" z="-93.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8ba8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8ba8_pos" unit="mm" x="190.16" y="-190.16" z="-95.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8c00">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8c00_pos" unit="mm" x="190.16" y="-190.16" z="-93.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8c58">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8c58_pos" unit="mm" x="190.16" y="190.16" z="-95.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8cb0">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8cb0_pos" unit="mm" x="190.16" y="190.16" z="-93.52"/>
+      </physvol>
+      <physvol name="Plane0x91a8d48">
+        <volumeref ref="Plane0x91a84e0"/>
+        <position name="Plane0x91a8d48_pos" unit="mm" x="0" y="0" z="-78.68"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8dc8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8dc8_pos" unit="mm" x="-190.16" y="-190.16" z="-63.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8e20">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8e20_pos" unit="mm" x="-190.16" y="-190.16" z="-61.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8e78">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8e78_pos" unit="mm" x="-190.16" y="190.16" z="-63.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8ed0">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8ed0_pos" unit="mm" x="-190.16" y="190.16" z="-61.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8f28">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8f28_pos" unit="mm" x="190.16" y="-190.16" z="-63.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8f80">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8f80_pos" unit="mm" x="190.16" y="-190.16" z="-61.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a8fd8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a8fd8_pos" unit="mm" x="190.16" y="190.16" z="-63.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9030">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9030_pos" unit="mm" x="190.16" y="190.16" z="-61.52"/>
+      </physvol>
+      <physvol name="Plane0x91a90f0">
+        <volumeref ref="Plane0x91a84e0"/>
+        <position name="Plane0x91a90f0_pos" unit="mm" x="0" y="0" z="-46.68"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9128">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9128_pos" unit="mm" x="-190.16" y="-190.16" z="-31.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9180">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9180_pos" unit="mm" x="-190.16" y="-190.16" z="-29.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a91d8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a91d8_pos" unit="mm" x="-190.16" y="190.16" z="-31.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9230">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9230_pos" unit="mm" x="-190.16" y="190.16" z="-29.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9288">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9288_pos" unit="mm" x="190.16" y="-190.16" z="-31.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a92e0">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a92e0_pos" unit="mm" x="190.16" y="-190.16" z="-29.52"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9338">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9338_pos" unit="mm" x="190.16" y="190.16" z="-31.84"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9390">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9390_pos" unit="mm" x="190.16" y="190.16" z="-29.52"/>
+      </physvol>
+      <physvol name="PlaneThickW0x91a93e8">
+        <volumeref ref="PlaneThickW0x91a85b8"/>
+        <position name="PlaneThickW0x91a93e8_pos" unit="mm" x="0" y="0" z="-14.68"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9a20">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9a20_pos" unit="mm" x="-190.16" y="-190.16" z="0.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9a78">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9a78_pos" unit="mm" x="-190.16" y="-190.16" z="2.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9ad0">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9ad0_pos" unit="mm" x="-190.16" y="190.16" z="0.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9b28">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9b28_pos" unit="mm" x="-190.16" y="190.16" z="2.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9b80">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9b80_pos" unit="mm" x="190.16" y="-190.16" z="0.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9bd8">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9bd8_pos" unit="mm" x="190.16" y="-190.16" z="2.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a9088">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a9088_pos" unit="mm" x="190.16" y="190.16" z="0.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a9d18">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a9d18_pos" unit="mm" x="190.16" y="190.16" z="2.48"/>
+      </physvol>
+      <physvol name="PlaneThickW0x91a9d70">
+        <volumeref ref="PlaneThickW0x91a85b8"/>
+        <position name="PlaneThickW0x91a9d70_pos" unit="mm" x="0" y="0" z="17.32"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aa390">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aa390_pos" unit="mm" x="-190.16" y="-190.16" z="32.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91aa3e8">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91aa3e8_pos" unit="mm" x="-190.16" y="-190.16" z="34.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aa440">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aa440_pos" unit="mm" x="-190.16" y="190.16" z="32.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91aa498">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91aa498_pos" unit="mm" x="-190.16" y="190.16" z="34.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aa4f0">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aa4f0_pos" unit="mm" x="190.16" y="-190.16" z="32.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91aa548">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91aa548_pos" unit="mm" x="190.16" y="-190.16" z="34.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aa5a0">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aa5a0_pos" unit="mm" x="190.16" y="190.16" z="32.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91aa5f8">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91aa5f8_pos" unit="mm" x="190.16" y="190.16" z="34.48"/>
+      </physvol>
+      <physvol name="PlaneThinW0x91aa650">
+        <volumeref ref="PlaneThinW0x91a8690"/>
+        <position name="PlaneThinW0x91aa650_pos" unit="mm" x="0" y="0" z="49.32"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aac70">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aac70_pos" unit="mm" x="-190.16" y="-190.16" z="64.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91aacc8">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91aacc8_pos" unit="mm" x="-190.16" y="-190.16" z="66.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91aad20">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91aad20_pos" unit="mm" x="-190.16" y="190.16" z="64.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a8098">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a8098_pos" unit="mm" x="-190.16" y="190.16" z="66.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a65d8">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a65d8_pos" unit="mm" x="190.16" y="-190.16" z="64.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a6610">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a6610_pos" unit="mm" x="190.16" y="-190.16" z="66.48"/>
+      </physvol>
+      <physvol name="STKDetectorY0x91a6668">
+        <volumeref ref="STKDetectorY0x91a8768"/>
+        <position name="STKDetectorY0x91a6668_pos" unit="mm" x="190.16" y="190.16" z="64.16"/>
+      </physvol>
+      <physvol name="STKDetectorX0x91a66c0">
+        <volumeref ref="STKDetectorX0x91a8840"/>
+        <position name="STKDetectorX0x91a66c0_pos" unit="mm" x="190.16" y="190.16" z="66.48"/>
+      </physvol>
+      <physvol name="Plane0x91ab080">
+        <volumeref ref="Plane0x91a84e0"/>
+        <position name="Plane0x91ab080_pos" unit="mm" x="0" y="0" z="81.32"/>
+      </physvol>
+    </volume>
+    <volume name="BGODetectorY0x91d6580">
+      <materialref ref="G4_BGO0x91d4360"/>
+      <solidref ref="BGODetectorY0x91d6520"/>
+    </volume>
+    <volume name="BGOLayerY0x91d5ec8">
+      <materialref ref="Galactic0x91d4d98"/>
+      <solidref ref="BGOLayerY0x91d5e68"/>
+      <physvol name="BGODetectorY0x91d6638">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6638_pos" unit="mm" x="-288.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d66e8">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d66e8_pos" unit="mm" x="-261.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6798">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6798_pos" unit="mm" x="-233.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6848">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6848_pos" unit="mm" x="-206.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d68f8">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d68f8_pos" unit="mm" x="-178.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d69d0">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d69d0_pos" unit="mm" x="-151.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6a80">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6a80_pos" unit="mm" x="-123.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6b30">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6b30_pos" unit="mm" x="-96.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6be0">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6be0_pos" unit="mm" x="-68.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6d20">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6d20_pos" unit="mm" x="-41.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6dd0">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6dd0_pos" unit="mm" x="-13.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6e80">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6e80_pos" unit="mm" x="13.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6f30">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6f30_pos" unit="mm" x="41.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6fe0">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6fe0_pos" unit="mm" x="68.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d7090">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d7090_pos" unit="mm" x="96.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d7140">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d7140_pos" unit="mm" x="123.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d71f0">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d71f0_pos" unit="mm" x="151.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d6cb8">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d6cb8_pos" unit="mm" x="178.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d73e8">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d73e8_pos" unit="mm" x="206.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d7498">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d7498_pos" unit="mm" x="233.75" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d7548">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d7548_pos" unit="mm" x="261.25" y="0" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorY0x91d75f8">
+        <volumeref ref="BGODetectorY0x91d6580"/>
+        <position name="BGODetectorY0x91d75f8_pos" unit="mm" x="288.75" y="0" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="BGODetectorX0x91d64a8">
+      <materialref ref="G4_BGO0x91d4360"/>
+      <solidref ref="BGODetectorX0x91d5f40"/>
+    </volume>
+    <volume name="BGOLayerX0x91d5df0">
+      <materialref ref="Galactic0x91d4d98"/>
+      <solidref ref="BGOLayerX0x91d5a28"/>
+      <physvol name="BGODetectorX0x91d6690">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6690_pos" unit="mm" x="0" y="-288.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6740">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6740_pos" unit="mm" x="0" y="-261.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d67f0">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d67f0_pos" unit="mm" x="0" y="-233.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d68a0">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d68a0_pos" unit="mm" x="0" y="-206.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6950">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6950_pos" unit="mm" x="0" y="-178.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6a28">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6a28_pos" unit="mm" x="0" y="-151.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6ad8">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6ad8_pos" unit="mm" x="0" y="-123.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6b88">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6b88_pos" unit="mm" x="0" y="-96.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6c80">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6c80_pos" unit="mm" x="0" y="-68.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6d78">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6d78_pos" unit="mm" x="0" y="-41.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6e28">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6e28_pos" unit="mm" x="0" y="-13.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6ed8">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6ed8_pos" unit="mm" x="0" y="13.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d6f88">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d6f88_pos" unit="mm" x="0" y="41.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d7038">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d7038_pos" unit="mm" x="0" y="68.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d70e8">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d70e8_pos" unit="mm" x="0" y="96.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d7198">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d7198_pos" unit="mm" x="0" y="123.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d72b0">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d72b0_pos" unit="mm" x="0" y="151.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d7390">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d7390_pos" unit="mm" x="0" y="178.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d7440">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d7440_pos" unit="mm" x="0" y="206.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d74f0">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d74f0_pos" unit="mm" x="0" y="233.75" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d75a0">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d75a0_pos" unit="mm" x="0" y="261.25" z="0"/>
+      </physvol>
+      <physvol name="BGODetectorX0x91d7650">
+        <volumeref ref="BGODetectorX0x91d64a8"/>
+        <position name="BGODetectorX0x91d7650_pos" unit="mm" x="0" y="288.75" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="BGO0x91a6b28">
+      <materialref ref="Galactic0x91991d0"/>
+      <solidref ref="BGO0x91a6ad0"/>
+      <physvol name="BGOLayerY0x91d59f0">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d59f0_pos" unit="mm" x="0" y="0" z="-190.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d5fa0">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d5fa0_pos" unit="mm" x="0" y="0" z="-161.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d5ff8">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d5ff8_pos" unit="mm" x="0" y="0" z="-132.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d6050">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d6050_pos" unit="mm" x="0" y="0" z="-103.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d60a8">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d60a8_pos" unit="mm" x="0" y="0" z="-74.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d6128">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d6128_pos" unit="mm" x="0" y="0" z="-45.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d6180">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d6180_pos" unit="mm" x="0" y="0" z="-16.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d61d8">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d61d8_pos" unit="mm" x="0" y="0" z="12.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d6230">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d6230_pos" unit="mm" x="0" y="0" z="41.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d62d0">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d62d0_pos" unit="mm" x="0" y="0" z="70.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d6328">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d6328_pos" unit="mm" x="0" y="0" z="99.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d6380">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d6380_pos" unit="mm" x="0" y="0" z="128.5"/>
+      </physvol>
+      <physvol name="BGOLayerY0x91d63d8">
+        <volumeref ref="BGOLayerY0x91d5ec8"/>
+        <position name="BGOLayerY0x91d63d8_pos" unit="mm" x="0" y="0" z="157.5"/>
+      </physvol>
+      <physvol name="BGOLayerX0x91d6430">
+        <volumeref ref="BGOLayerX0x91d5df0"/>
+        <position name="BGOLayerX0x91d6430_pos" unit="mm" x="0" y="0" z="186.5"/>
+      </physvol>
+    </volume>
+    <volume name="Payload0x91a67e0">
+      <materialref ref="Galactic0x91991d0"/>
+      <solidref ref="Payload0x91a6788"/>
+      <physvol name="PSD0x91a6888">
+        <volumeref ref="PSD0x91a6930"/>
+        <position name="PSD0x91a6888_pos" unit="mm" x="0" y="0" z="305.9"/>
+      </physvol>
+      <physvol name="STK0x91a6a80">
+        <volumeref ref="STK0x91a6a10"/>
+        <position name="STK0x91a6a80_pos" unit="mm" x="0" y="0" z="169.9"/>
+      </physvol>
+      <physvol name="BGO0x91a6b98">
+        <volumeref ref="BGO0x91a6b28"/>
+        <position name="BGO0x91a6b98_pos" unit="mm" x="0" y="0" z="-181.1"/>
+      </physvol>
+    </volume>
+    <volume name="World0x91a63d0">
+      <materialref ref="Galactic0x91991d0"/>
+      <solidref ref="World0x91a5e88"/>
+      <physvol name="Payload0x91a6850">
+        <volumeref ref="Payload0x91a67e0"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="World0x91a63d0"/>
+  </setup>
+
+</gdml>
